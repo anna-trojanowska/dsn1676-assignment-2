@@ -22,26 +22,66 @@ html {
     box-sizing: inherit;
 }
 
+
 .clock-face {
     height: 300px;
     width: 300px;
     position: relative;
+    background-image: url(../images/clock-face.svg);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clock-face:target .hand-hour {
+    transform: rotate(360deg);
+}
+
+.clock-face:target .hand-minute {
+    transform: rotate(4320deg);
 }
 
 .hand {
     width: 14px;
     position: absolute;
     left: calc(50% - 7px);
-    top: calc(50% - 7px);
+    bottom: 50%;
+    transition: all 6s linear;
+    transform-origin:bottom center;
 }
 
 .center {
     width: 28px;
     position: absolute;
-    top: calc(50% - 14px);
+    bottom: calc(50% - 14px);
     left: calc(50% - 14px);
 }
 
-.clock-face {
-    background-image: url(../images/clock-face.svg);
+.button {
+    border-radius: 50%;
+    width: 6em;
+    line-height: 6em;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    text-align: center; 
+    margin: 1em;
 }
+
+a:hover {
+    transition: all .3s linear;
+    background-color: white;
+    color: black;
+}
+    
+.forwards {
+    background-color: green;  
+}
+    
+.backwards {
+    background-color: red;  
+}
+    
+.main {
+    text-align: center;
+}
+    
